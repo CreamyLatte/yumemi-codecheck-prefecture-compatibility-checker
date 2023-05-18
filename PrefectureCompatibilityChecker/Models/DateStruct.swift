@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct DateStruct: Codable {
+    var year: Int
+    var month: Int
+    var day: Int
+}
