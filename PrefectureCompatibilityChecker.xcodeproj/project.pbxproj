@@ -12,6 +12,8 @@
 		63B0C86F2A15C998002F1E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B0C86E2A15C998002F1E77 /* Assets.xcassets */; };
 		63B0C8722A15C998002F1E77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B0C8712A15C998002F1E77 /* Preview Assets.xcassets */; };
 		63B0C87B2A15CC70002F1E77 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 63B0C87A2A15CC70002F1E77 /* .gitignore */; };
+		63B0C87E2A162628002F1E77 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87D2A162628002F1E77 /* Person.swift */; };
+		63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87F2A162637002F1E77 /* FortuneResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		63B0C86E2A15C998002F1E77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63B0C8712A15C998002F1E77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63B0C87A2A15CC70002F1E77 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		63B0C87D2A162628002F1E77 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		63B0C87F2A162637002F1E77 /* FortuneResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			children = (
 				63B0C86A2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift */,
 				63B0C86C2A15C996002F1E77 /* ContentView.swift */,
+				63B0C87C2A1625C8002F1E77 /* Models */,
 				63B0C86E2A15C998002F1E77 /* Assets.xcassets */,
 				63B0C8702A15C998002F1E77 /* Preview Content */,
 			);
@@ -68,6 +73,15 @@
 				63B0C8712A15C998002F1E77 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		63B0C87C2A1625C8002F1E77 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63B0C87D2A162628002F1E77 /* Person.swift */,
+				63B0C87F2A162637002F1E77 /* FortuneResult.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */,
+				63B0C87E2A162628002F1E77 /* Person.swift in Sources */,
 				63B0C86D2A15C996002F1E77 /* ContentView.swift in Sources */,
 				63B0C86B2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift in Sources */,
 			);
