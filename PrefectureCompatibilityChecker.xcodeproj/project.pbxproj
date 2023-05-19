@@ -15,6 +15,7 @@
 		63B0C87E2A162628002F1E77 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87D2A162628002F1E77 /* Person.swift */; };
 		63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87F2A162637002F1E77 /* FortuneResult.swift */; };
 		63B0C8822A162E9E002F1E77 /* DateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C8812A162E9E002F1E77 /* DateStruct.swift */; };
+		63B0C8842A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		63B0C87D2A162628002F1E77 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		63B0C87F2A162637002F1E77 /* FortuneResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResult.swift; sourceTree = "<group>"; };
 		63B0C8812A162E9E002F1E77 /* DateStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStruct.swift; sourceTree = "<group>"; };
+		63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureCompatibilityChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				63B0C87D2A162628002F1E77 /* Person.swift */,
 				63B0C8812A162E9E002F1E77 /* DateStruct.swift */,
 				63B0C87F2A162637002F1E77 /* FortuneResult.swift */,
+				63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */,
+				63B0C8842A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift in Sources */,
 				63B0C8822A162E9E002F1E77 /* DateStruct.swift in Sources */,
 				63B0C87E2A162628002F1E77 /* Person.swift in Sources */,
 				63B0C86D2A15C996002F1E77 /* ContentView.swift in Sources */,
