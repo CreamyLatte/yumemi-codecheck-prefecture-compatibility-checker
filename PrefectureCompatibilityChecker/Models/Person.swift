@@ -12,11 +12,3 @@ struct Person {
     var birthday: Date
     var bloodType: String
 }
-
-extension Person: Encodable {
-    enum CodingKeys: String, CodingKey {
-        case name
-        case birthday
-        case bloodType = "blood_type"
-    }
-}
