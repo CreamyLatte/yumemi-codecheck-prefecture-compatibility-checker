@@ -9,7 +9,7 @@ import Foundation
 
 struct Person {
     var name: String
-    var birthday: DateStruct
+    var birthday: Date
     var bloodType: String
 }
 

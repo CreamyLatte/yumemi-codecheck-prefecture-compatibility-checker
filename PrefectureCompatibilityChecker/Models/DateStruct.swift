@@ -16,14 +16,17 @@ struct DateStruct: Encodable {
 extension DateStruct {
     static var today: DateStruct {
         let currentDate = Date()
-        
-        let calendar = Calendar.current
-        let dateComponents = calendar.dateComponents([.year, .month, .day], from: currentDate)
+        return DateStruct(date: currentDate)
+    }
+}
 
-        let year = dateComponents.year!
-        let month = dateComponents.month!
-        let day = dateComponents.day!
-        
-        return DateStruct(year: year, month: month, day: day)
+extension DateStruct {
+    init(date: Date) {
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+
+        self.year = dateComponents.year!
+        self.month = dateComponents.month!
+        self.day = dateComponents.day!
     }
 }

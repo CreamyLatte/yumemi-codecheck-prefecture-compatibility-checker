@@ -68,7 +68,7 @@ class PrefectureCompatibilityChecker {
 extension PrefectureCompatibilityChecker.Request {
     init(person: Person) {
         self.name = person.name
-        self.birthday = person.birthday
+        self.birthday = DateStruct(date: person.birthday)
         self.bloodType = person.bloodType
     }
 }
@@ -81,7 +81,7 @@ extension PrefectureCompatibilityChecker {
 }
 
 // test
-let testPerson = Person(name: "John Doe", birthday: DateStruct(year: 2020, month: 4, day: 23), bloodType: "a")
+let testPerson = Person(name: "John Doe", birthday: Calendar.current.date(from: DateComponents(year: 1999, month: 6, day: 3))!, bloodType: "a")
 let checker = PrefectureCompatibilityChecker()
 
 
