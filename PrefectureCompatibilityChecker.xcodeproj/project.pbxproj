@@ -14,7 +14,6 @@
 		63B0C87B2A15CC70002F1E77 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 63B0C87A2A15CC70002F1E77 /* .gitignore */; };
 		63B0C87E2A162628002F1E77 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87D2A162628002F1E77 /* Person.swift */; };
 		63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87F2A162637002F1E77 /* FortuneResult.swift */; };
-		63B0C8822A162E9E002F1E77 /* DateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C8812A162E9E002F1E77 /* DateStruct.swift */; };
 		63B0C8842A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +26,6 @@
 		63B0C87A2A15CC70002F1E77 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		63B0C87D2A162628002F1E77 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		63B0C87F2A162637002F1E77 /* FortuneResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResult.swift; sourceTree = "<group>"; };
-		63B0C8812A162E9E002F1E77 /* DateStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStruct.swift; sourceTree = "<group>"; };
 		63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureCompatibilityChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				63B0C87D2A162628002F1E77 /* Person.swift */,
-				63B0C8812A162E9E002F1E77 /* DateStruct.swift */,
 				63B0C87F2A162637002F1E77 /* FortuneResult.swift */,
 				63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */,
 			);
@@ -163,7 +160,6 @@
 			files = (
 				63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */,
 				63B0C8842A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift in Sources */,
-				63B0C8822A162E9E002F1E77 /* DateStruct.swift in Sources */,
 				63B0C87E2A162628002F1E77 /* Person.swift in Sources */,
 				63B0C86D2A15C996002F1E77 /* ContentView.swift in Sources */,
 				63B0C86B2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift in Sources */,
