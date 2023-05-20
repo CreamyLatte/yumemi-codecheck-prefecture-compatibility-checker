@@ -52,9 +52,29 @@ class PrefectureCompatibilityChecker {
     
     struct Request: Encodable {
         var name: String
-        var birthday: DateStruct
+        var birthday: YearMonthDay
         var bloodType: String
-        var today: DateStruct = DateStruct.today
+        var today: YearMonthDay = YearMonthDay.today
+        
+        struct YearMonthDay: Encodable {
+            var year: Int
+            var month: Int
+            var day: Int
+            
+            static var today: YearMonthDay {
+                let currentDate = Date()
+                return YearMonthDay(date: currentDate)
+            }
+            
+            init(date: Date) {
+                let calendar = Calendar.current
+                let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+
+                self.year = dateComponents.year!
+                self.month = dateComponents.month!
+                self.day = dateComponents.day!
+            }
+        }
         
         enum CodingKeys: String, CodingKey {
             case name
@@ -62,14 +82,12 @@ class PrefectureCompatibilityChecker {
             case bloodType = "blood_type"
             case today
         }
-    }
-}
-
-extension PrefectureCompatibilityChecker.Request {
-    init(person: Person) {
-        self.name = person.name
-        self.birthday = person.birthday
-        self.bloodType = person.bloodType
+        
+        init(person: Person) {
+            self.name = person.name
+            self.birthday = YearMonthDay(date: person.birthday)
+            self.bloodType = person.bloodType
+        }
     }
 }
 
@@ -81,7 +99,7 @@ extension PrefectureCompatibilityChecker {
 }
 
 // test
-let testPerson = Person(name: "John Doe", birthday: DateStruct(year: 2020, month: 4, day: 23), bloodType: "a")
+let testPerson = Person(name: "John Doe", birthday: Calendar.current.date(from: DateComponents(year: 1999, month: 6, day: 3))!, bloodType: "a")
 let checker = PrefectureCompatibilityChecker()
 
 

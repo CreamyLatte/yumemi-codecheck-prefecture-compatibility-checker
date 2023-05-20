@@ -7,14 +7,8 @@
 
 import Foundation
 
-struct Person: Codable {
+struct Person {
     var name: String
-    var birthday: DateStruct
+    var birthday: Date
     var bloodType: String
-    
-    enum CodingKeys: String, CodingKey {
-        case name
-        case birthday
-        case bloodType = "blood_type"
-    }
 }
