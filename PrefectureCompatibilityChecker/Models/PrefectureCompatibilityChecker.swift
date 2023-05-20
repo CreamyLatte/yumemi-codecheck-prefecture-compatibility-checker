@@ -52,18 +52,18 @@ class PrefectureCompatibilityChecker {
     
     struct Request: Encodable {
         var name: String
-        var birthday: DateStruct
+        var birthday: YearMonthDay
         var bloodType: String
-        var today: DateStruct = DateStruct.today
+        var today: YearMonthDay = YearMonthDay.today
         
-        struct DateStruct: Encodable {
+        struct YearMonthDay: Encodable {
             var year: Int
             var month: Int
             var day: Int
             
-            static var today: DateStruct {
+            static var today: YearMonthDay {
                 let currentDate = Date()
-                return DateStruct(date: currentDate)
+                return YearMonthDay(date: currentDate)
             }
             
             init(date: Date) {
@@ -85,7 +85,7 @@ class PrefectureCompatibilityChecker {
         
         init(person: Person) {
             self.name = person.name
-            self.birthday = DateStruct(date: person.birthday)
+            self.birthday = YearMonthDay(date: person.birthday)
             self.bloodType = person.bloodType
         }
     }
