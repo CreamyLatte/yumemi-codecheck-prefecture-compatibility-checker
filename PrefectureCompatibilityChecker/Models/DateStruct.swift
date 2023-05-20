@@ -12,3 +12,18 @@ struct DateStruct: Codable {
     var month: Int
     var day: Int
 }
+
+extension DateStruct {
+    static var today: DateStruct {
+        let currentDate = Date()
+        
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: currentDate)
+
+        let year = dateComponents.year!
+        let month = dateComponents.month!
+        let day = dateComponents.day!
+        
+        return DateStruct(year: year, month: month, day: day)
+    }
+}
