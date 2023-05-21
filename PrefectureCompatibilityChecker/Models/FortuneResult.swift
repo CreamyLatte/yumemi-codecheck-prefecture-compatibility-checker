@@ -32,3 +32,9 @@ struct FortuneResult: Decodable {
         case brief
     }
 }
+
+extension FortuneResult.MonthDay: CustomStringConvertible {
+    var description: String {
+        return "\(month)月\(day)日"
+    }
+}
