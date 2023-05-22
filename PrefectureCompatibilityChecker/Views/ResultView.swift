@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResultView: View {
+    @EnvironmentObject var viewModel: ViewModel
     let fortuneResult: FortuneResult
     var prefecture: String { fortuneResult.prefecture }
     var prefectureImageURL: URL? { fortuneResult.prefectureImageURL }
@@ -23,14 +24,23 @@ struct ResultView: View {
             .frame(width: 200, height: 200)
             
             PrefectureInfoView(fortuneResult: fortuneResult)
+            if viewModel.isResult {
+                Button(action: {
+                    viewModel.showMainView()
+                }, label: {
+                    Text("タイトル画面に戻る")
+                })
+            }
         }
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
+    @StateObject static var viewModel = ViewModel()
     static let result: FortuneResult = load("ResultSample.json")
     static var previews: some View {
         ResultView(fortuneResult: result)
+            .environmentObject(viewModel)
     }
 }
 
