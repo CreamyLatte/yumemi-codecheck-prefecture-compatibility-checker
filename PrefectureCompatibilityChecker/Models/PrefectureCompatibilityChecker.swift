@@ -98,10 +98,6 @@ extension PrefectureCompatibilityChecker {
     }
 }
 
-// test
-let testPerson = Person(name: "John Doe", birthday: Calendar.current.date(from: DateComponents(year: 1999, month: 6, day: 3))!, bloodType: "a")
-let checker = PrefectureCompatibilityChecker()
-
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
