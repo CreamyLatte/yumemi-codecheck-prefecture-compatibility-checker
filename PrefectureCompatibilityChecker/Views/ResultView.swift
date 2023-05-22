@@ -10,13 +10,11 @@ import SwiftUI
 struct ResultView: View {
     @EnvironmentObject var viewModel: ViewModel
     let fortuneResult: FortuneResult
-    var prefecture: String { fortuneResult.prefecture }
-    var prefectureImageURL: URL? { fortuneResult.prefectureImageURL }
     
     var body: some View {
         VStack {
-            Text(prefecture).font(.title)
-            AsyncImage(url: prefectureImageURL) { image in
+            Text(fortuneResult.prefecture).font(.title)
+            AsyncImage(url: fortuneResult.prefectureImageURL) { image in
                 image.resizable()
             } placeholder: {
                 ProgressView()
@@ -46,23 +44,19 @@ struct ResultView_Previews: PreviewProvider {
 
 struct PrefectureInfoView: View {
     let fortuneResult: FortuneResult
-    var capital: String { fortuneResult.capital }
-    var citizenDay: String? { fortuneResult.citizenDay?.description }
     var administrativeWord: String { String(fortuneResult.prefecture.last!) }
-    var hasCoastLine: Bool { fortuneResult.hasCoastLine }
-    var brief: String { fortuneResult.brief }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12){
-            Text("🏢\(administrativeWord)庁所在地 \(capital)")
+            Text("🏢\(administrativeWord)庁所在地 \(fortuneResult.capital)")
             
-            if let citizenDay = citizenDay {
+            if let citizenDay = fortuneResult.citizenDay?.description {
                 Text("🗓️\(administrativeWord)民の日 \(citizenDay)")
             }
-            if hasCoastLine {
+            if fortuneResult.hasCoastLine {
                 Text("🌊海に面した地域")
             }
-            Text(brief)
+            Text(fortuneResult.brief)
         }
     }
 }
