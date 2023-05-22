@@ -12,3 +12,11 @@ struct Person {
     var birthday: Date
     var bloodType: String
 }
+
+extension Person {
+    init() {
+        self.name = ""
+        self.birthday = Calendar.current.date(from: DateComponents(year: 1976, month: 4, day: 1))!
+        self.bloodType = "a"
+    }
+}
