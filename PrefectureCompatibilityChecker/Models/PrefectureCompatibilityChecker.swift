@@ -82,18 +82,15 @@ class PrefectureCompatibilityChecker {
             case bloodType = "blood_type"
             case today
         }
-        
-        init(person: Person) {
-            self.name = person.name
-            self.birthday = YearMonthDay(date: person.birthday)
-            self.bloodType = person.bloodType
-        }
     }
 }
 
 extension PrefectureCompatibilityChecker {
     func checkCompatibility(person: Person) async throws -> FortuneResult {
-        let request = Request(person: person)
+        let name = person.name
+        let birthday = Request.YearMonthDay(date: person.birthday)
+        let bloodType = person.bloodType
+        let request = Request(name: name, birthday: birthday, bloodType: bloodType)
         return try await checkCompatibility(request: request)
     }
 }
