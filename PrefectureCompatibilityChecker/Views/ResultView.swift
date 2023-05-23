@@ -123,3 +123,28 @@ struct HeaderBodyTextView: View {
     }
 }
 
+
+struct ShareResultButton: View {
+    @Binding var image: Image?
+    let subject: String
+    let message: String
+    
+    var body: some View {
+        if let image = image {
+            ShareLink(
+                item: image,
+                subject: Text(subject),
+                message: Text(message),
+                preview: SharePreview(subject, image: image)
+            ) {
+                Image(systemName: "square.and.arrow.up")
+                    .foregroundColor(.accentColor)
+                    .padding()
+            }
+        } else {
+            Image(systemName: "square.and.arrow.up")
+                .foregroundColor(.secondary)
+                .padding()
+        }
+    }
+}
