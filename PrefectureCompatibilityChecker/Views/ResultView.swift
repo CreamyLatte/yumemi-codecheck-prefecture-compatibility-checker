@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultView: View {
     @EnvironmentObject var viewModel: ViewModel
     let fortuneResult: FortuneResult
+    @State private var image: Image? = nil
     
     @Environment(\.colorScheme) private var colorScheme
     private var gradient: LinearGradient {
@@ -59,6 +60,24 @@ struct ResultView: View {
                     .background(gradient)
                 }
             }
+        }
+        .task {
+            await downlodImage()
+        }
+    }
+    
+    func downlodImage() async {
+        guard let url = fortuneResult.prefectureImageURL else {
+            return
+        }
+        let request = URLRequest(url: url)
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let uiImage = UIImage(data: data)
+            guard let uiImage = uiImage else { return }
+            image = Image(uiImage: uiImage)
+        } catch {
+            return
         }
     }
 }
