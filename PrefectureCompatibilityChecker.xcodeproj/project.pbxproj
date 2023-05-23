@@ -20,6 +20,7 @@
 		63B0C8802A162637002F1E77 /* FortuneResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C87F2A162637002F1E77 /* FortuneResult.swift */; };
 		63B0C8842A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */; };
 		63E8FE7F2A1B409100FC5F17 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8FE7E2A1B409100FC5F17 /* ViewModel.swift */; };
+		63E8FE822A1C54F300FC5F17 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8FE812A1C54F300FC5F17 /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		63B0C87F2A162637002F1E77 /* FortuneResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResult.swift; sourceTree = "<group>"; };
 		63B0C8832A170A5A002F1E77 /* PrefectureCompatibilityChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureCompatibilityChecker.swift; sourceTree = "<group>"; };
 		63E8FE7E2A1B409100FC5F17 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = PrefectureCompatibilityChecker/Models/ViewModel.swift; sourceTree = SOURCE_ROOT; };
+		63E8FE812A1C54F300FC5F17 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				636156ED2A19E3FA003DB696 /* PersonInputView.swift */,
 				63E8FE7E2A1B409100FC5F17 /* ViewModel.swift */,
 				636156EF2A19E408003DB696 /* ResultView.swift */,
+				63E8FE812A1C54F300FC5F17 /* TitleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				636156EE2A19E3FA003DB696 /* PersonInputView.swift in Sources */,
 				63B0C87E2A162628002F1E77 /* Person.swift in Sources */,
 				63B0C86D2A15C996002F1E77 /* ContentView.swift in Sources */,
+				63E8FE822A1C54F300FC5F17 /* TitleView.swift in Sources */,
 				636156F02A19E408003DB696 /* ResultView.swift in Sources */,
 				63E8FE7F2A1B409100FC5F17 /* ViewModel.swift in Sources */,
 				63B0C86B2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift in Sources */,
