@@ -53,7 +53,7 @@ struct ResultView: View {
                             Text("Topに戻る")
                         }
                         .buttonStyle(.borderedProminent)
-                        .padding(.top)
+                        .padding()
                         .frame(maxWidth: .infinity)
                     }
                     .background(gradient)
