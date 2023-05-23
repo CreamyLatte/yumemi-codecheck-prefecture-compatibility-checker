@@ -12,7 +12,21 @@ enum APIError: Error {
     case failedToJSONEncode
     case failedtoURLSession
     case httpResponseError(Int, String)
-    case dataError
+}
+
+extension APIError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .failedToCreateURL:
+            return "API接続のためのURLが生成できませんでした"
+        case .failedToJSONEncode:
+            return "JSONデータのエンコードに失敗しました"
+        case .failedtoURLSession:
+            return "URLSessionの接続に失敗しました"
+        case .httpResponseError(let code, let error):
+            return "サーバに接続できませんでした\n\(code): \(error)"
+        }
+    }
 }
 
 class PrefectureCompatibilityChecker {

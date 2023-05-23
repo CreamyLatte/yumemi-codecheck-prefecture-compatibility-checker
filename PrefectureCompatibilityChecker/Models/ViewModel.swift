@@ -13,15 +13,8 @@ final class ViewModel: ObservableObject {
     @Published var isResult: Bool = false
     
     let prefectureCompatibilityChecker = PrefectureCompatibilityChecker()
-    func checkCompatibility(person: Person) async -> FortuneResult? {
-        let fortuneResult: FortuneResult
-        do {
-            fortuneResult = try await prefectureCompatibilityChecker.checkCompatibility(person: person)
-        } catch {
-            print("Couldn't tell a fortune. \(error)")
-            return nil
-        }
-        return fortuneResult
+    func checkCompatibility(person: Person) async throws -> FortuneResult {
+        return try await prefectureCompatibilityChecker.checkCompatibility(person: person)
     }
     
     func showInputView() {
