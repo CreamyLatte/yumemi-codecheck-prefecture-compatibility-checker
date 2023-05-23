@@ -11,23 +11,53 @@ struct ResultView: View {
     @EnvironmentObject var viewModel: ViewModel
     let fortuneResult: FortuneResult
     
+    @Environment(\.colorScheme) private var colorScheme
+    private var gradient: LinearGradient {
+        LinearGradient(
+            gradient: Gradient(colors: [.clear, colorScheme == .dark ? .black : .white]),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+    
     var body: some View {
-        VStack {
-            Text(fortuneResult.prefecture).font(.title)
-            AsyncImage(url: fortuneResult.prefectureImageURL) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
+        ZStack {
+            ScrollView {
+                VStack {
+                    Text("あなたに合う都道府県は").font(.title3).bold()
+                    Text(fortuneResult.prefecture).font(.title).bold()
+                }
+                .padding()
+                
+                AsyncImage(url: fortuneResult.prefectureImageURL) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 200)
+                
+                PrefectureInfoView(fortuneResult: fortuneResult)
+                    .padding()
+                Spacer().frame(height: 100)
             }
-            .frame(width: 200, height: 200)
-            
-            PrefectureInfoView(fortuneResult: fortuneResult)
             if viewModel.isResult {
-                Button(action: {
-                    viewModel.showMainView()
-                }, label: {
-                    Text("タイトル画面に戻る")
-                })
+                VStack {
+                    Spacer()
+                    
+                    HStack {
+                        Button(action: {
+                            viewModel.showMainView()
+                        }) {
+                            Text("Topに戻る")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .padding(.top)
+                        .frame(maxWidth: .infinity)
+                    }
+                    .background(gradient)
+                }
             }
         }
     }
@@ -48,15 +78,29 @@ struct PrefectureInfoView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12){
-            Text("🏢\(administrativeWord)庁所在地 \(fortuneResult.capital)")
+            HeaderBodyTextView(headerText: "🏢\(administrativeWord)庁所在地", bodyText: fortuneResult.capital)
             
             if let citizenDay = fortuneResult.citizenDay?.description {
-                Text("🗓️\(administrativeWord)民の日 \(citizenDay)")
+                HeaderBodyTextView(headerText: "🗓️\(administrativeWord)民の日", bodyText: citizenDay)
             }
-            if fortuneResult.hasCoastLine {
-                Text("🌊海に面した地域")
-            }
-            Text(fortuneResult.brief)
+            HeaderBodyTextView(headerText: "🗺️地域の性質", bodyText: fortuneResult.hasCoastLine ? "🌊海に面した地域" : "⛰️周りが陸地の地域")
+            HeaderBodyTextView(headerText: "🔍地域の説明", bodyText: fortuneResult.brief)
         }
     }
 }
+
+struct HeaderBodyTextView: View {
+    let headerText: String
+    let bodyText: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(headerText)
+                .font(.title3)
+                .bold()
+            Text(bodyText)
+                .padding(.leading, 20)
+        }
+    }
+}
+
