@@ -12,25 +12,26 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("47都道府県\n相性マッチング")
-                    .font(.title)
-                    .bold()
-                    .multilineTextAlignment(.center)
-                Button(action: {
-                    viewModel.showInputView()
-                }, label: {
-                    Text("占う")
-                })
+            ZStack {
+                Color(.systemGray6)
+                VStack {
+                    TitleView()
+                        .padding()
+                    Button(action: {
+                        viewModel.showInputView()
+                    }, label: {
+                        Text("自分と合う都道府県を占う")
+                            .multilineTextAlignment(.center)
+                    })
+                    .buttonStyle(CapsuleButtonStyle())
+                    .padding()
+                }
+                .padding()
+                .navigationDestination(isPresented: $viewModel.isInput) {
+                    PersonInputView()
+                }
             }
-            .padding()
-            .navigationDestination(isPresented: $viewModel.isInput) {
-                PersonInputView()
-            }
-            
+            .ignoresSafeArea()
         }
     }
 }
