@@ -10,6 +10,7 @@ import SwiftUI
 struct ResultView: View {
     @EnvironmentObject var viewModel: ViewModel
     let fortuneResult: FortuneResult
+    @State private var image: Image? = nil
     
     @Environment(\.colorScheme) private var colorScheme
     private var gradient: LinearGradient {
@@ -27,19 +28,30 @@ struct ResultView: View {
                     Text("あなたに合う都道府県は").font(.title3).bold()
                     Text(fortuneResult.prefecture).font(.title).bold()
                 }
-                .padding()
+                .padding([.top, .leading, .trailing])
                 
-                AsyncImage(url: fortuneResult.prefectureImageURL) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
+                ZStack(alignment: .bottomTrailing) {
+                    Group {
+                        if let image = image {
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } else {
+                            ProgressView()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 200)
+                    .padding()
+                    
+                    ShareResultButton(
+                        image: $image,
+                        subject: "47都道府県占い 結果 | \(fortuneResult.prefecture)",
+                        message: "私に会う都道府県は\(fortuneResult.prefecture)でした。"
+                    )
                 }
-                .frame(width: 200)
                 
                 PrefectureInfoView(fortuneResult: fortuneResult)
-                    .padding()
+                    .padding(.horizontal)
                 Spacer().frame(height: 100)
             }
             if viewModel.isResult {
@@ -59,6 +71,24 @@ struct ResultView: View {
                     .background(gradient)
                 }
             }
+        }
+        .task {
+            await downlodImage()
+        }
+    }
+    
+    func downlodImage() async {
+        guard let url = fortuneResult.prefectureImageURL else {
+            return
+        }
+        let request = URLRequest(url: url)
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let uiImage = UIImage(data: data)
+            guard let uiImage = uiImage else { return }
+            image = Image(uiImage: uiImage)
+        } catch {
+            return
         }
     }
 }
@@ -104,3 +134,28 @@ struct HeaderBodyTextView: View {
     }
 }
 
+
+struct ShareResultButton: View {
+    @Binding var image: Image?
+    let subject: String
+    let message: String
+    
+    var body: some View {
+        if let image = image {
+            ShareLink(
+                item: image,
+                subject: Text(subject),
+                message: Text(message),
+                preview: SharePreview(subject, image: image)
+            ) {
+                Image(systemName: "square.and.arrow.up")
+                    .foregroundColor(.accentColor)
+                    .padding()
+            }
+        } else {
+            Image(systemName: "square.and.arrow.up")
+                .foregroundColor(.secondary)
+                .padding()
+        }
+    }
+}
