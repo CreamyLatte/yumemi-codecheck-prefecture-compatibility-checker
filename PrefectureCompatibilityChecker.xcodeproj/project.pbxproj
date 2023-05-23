@@ -11,6 +11,7 @@
 		636156F02A19E408003DB696 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636156EF2A19E408003DB696 /* ResultView.swift */; };
 		636156F32A19E620003DB696 /* PostSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 636156F22A19E620003DB696 /* PostSample.json */; };
 		636156F52A19E641003DB696 /* ResultSample.json in Resources */ = {isa = PBXBuildFile; fileRef = 636156F42A19E641003DB696 /* ResultSample.json */; };
+		6381B8C72A1C8D5700B7F48B /* CapsuleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6381B8C62A1C8D5700B7F48B /* CapsuleButtonStyle.swift */; };
 		63B0C86B2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C86A2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift */; };
 		63B0C86D2A15C996002F1E77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0C86C2A15C996002F1E77 /* ContentView.swift */; };
 		63B0C86F2A15C998002F1E77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B0C86E2A15C998002F1E77 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		636156EF2A19E408003DB696 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		636156F22A19E620003DB696 /* PostSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PostSample.json; sourceTree = "<group>"; };
 		636156F42A19E641003DB696 /* ResultSample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ResultSample.json; sourceTree = "<group>"; };
+		6381B8C62A1C8D5700B7F48B /* CapsuleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonStyle.swift; sourceTree = "<group>"; };
 		63B0C8672A15C996002F1E77 /* PrefectureCompatibilityChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrefectureCompatibilityChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B0C86A2A15C996002F1E77 /* PrefectureCompatibilityCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureCompatibilityCheckerApp.swift; sourceTree = "<group>"; };
 		63B0C86C2A15C996002F1E77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				636156ED2A19E3FA003DB696 /* PersonInputView.swift */,
+				6381B8C52A1C8D1500B7F48B /* ButtonStyle */,
 				63E8FE7E2A1B409100FC5F17 /* ViewModel.swift */,
 				636156EF2A19E408003DB696 /* ResultView.swift */,
 				63E8FE812A1C54F300FC5F17 /* TitleView.swift */,
@@ -70,6 +73,14 @@
 				636156F42A19E641003DB696 /* ResultSample.json */,
 			);
 			path = "JSON sample";
+			sourceTree = "<group>";
+		};
+		6381B8C52A1C8D1500B7F48B /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				6381B8C62A1C8D5700B7F48B /* CapsuleButtonStyle.swift */,
+			);
+			path = ButtonStyle;
 			sourceTree = "<group>";
 		};
 		63B0C85E2A15C996002F1E77 = {
@@ -199,6 +210,7 @@
 				636156EE2A19E3FA003DB696 /* PersonInputView.swift in Sources */,
 				63B0C87E2A162628002F1E77 /* Person.swift in Sources */,
 				63B0C86D2A15C996002F1E77 /* ContentView.swift in Sources */,
+				6381B8C72A1C8D5700B7F48B /* CapsuleButtonStyle.swift in Sources */,
 				63E8FE822A1C54F300FC5F17 /* TitleView.swift in Sources */,
 				636156F02A19E408003DB696 /* ResultView.swift in Sources */,
 				63E8FE7F2A1B409100FC5F17 /* ViewModel.swift in Sources */,
