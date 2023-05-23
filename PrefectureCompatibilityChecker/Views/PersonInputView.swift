@@ -83,7 +83,6 @@ struct PersonInputView: View {
         apiTask = Task {
             isPredicting = true
             do {
-                try await Task.sleep(nanoseconds: 5 * 1000 * 1000 * 1000)
                 fortuneResult = try await viewModel.checkCompatibility(person: person)
             } catch let error as APIError {
                 isAlert = true
